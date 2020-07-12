@@ -1,23 +1,19 @@
-import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import { ListNode } from "../ListNode.ts";
-import { addTwoNumbers, arrayToListNode, listNodeToArray } from "./index.ts";
+import { assertEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import { arrayToListNode } from "../ListNode.ts";
+import { addTwoNumbers } from "./index.ts";
 
-Deno.test("List node and array transformations", () => {
-  const array = [1, 2, 3];
-  const listNode: ListNode = {
-    val: 1,
-    next: { val: 2, next: { val: 3, next: null } },
-  };
+Deno.test("[0] + [0] should equal [0]", () => {
+  const l1 = arrayToListNode([0]);
+  const l2 = arrayToListNode([0]);
+  const result = addTwoNumbers(l1, l2);
 
-  assertEquals(arrayToListNode(array), listNode);
-  assertEquals(listNodeToArray(listNode), array);
+  assertEquals(result, arrayToListNode([0]));
 });
 
-Deno.test("Plus two list nodes", () => {
-  assertEquals(addTwoNumbers(arrayToListNode([0]), arrayToListNode([0])), [0]);
+Deno.test("[5] + [5] should equal [0, 1]", () => {
+  const l1 = arrayToListNode([5]);
+  const l2 = arrayToListNode([5]);
+  const result = addTwoNumbers(l1, l2);
 
-  assertEquals(addTwoNumbers(arrayToListNode([5]), arrayToListNode([5])), [
-    1,
-    0,
-  ]);
+  assertEquals(result, arrayToListNode([0, 1]));
 });
