@@ -1,9 +1,21 @@
 export class ListNode {
   val: number;
   next: ListNode | null;
+
   constructor(val?: number, next?: ListNode | null) {
     this.val = val === undefined ? 0 : val;
     this.next = next === undefined ? null : next;
+  }
+
+  toArray() {
+    let array = [];
+    let currentListNode: ListNode | null = this;
+    do {
+      if (!currentListNode) break;
+      array.push(currentListNode.val);
+      currentListNode = currentListNode.next;
+    } while (this.next !== null);
+    return array;
   }
 }
 
@@ -19,15 +31,4 @@ export function arrayToListNode(array: number[]) {
   }, firstNode);
 
   return firstNode;
-}
-
-export function listNodeToArray(listNode: ListNode) {
-  let array = [];
-  let currentListNode: ListNode | null = listNode;
-  do {
-    if (!currentListNode) break;
-    array.push(currentListNode.val);
-    currentListNode = currentListNode.next;
-  } while (listNode.next !== null);
-  return array;
 }

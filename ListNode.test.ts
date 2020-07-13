@@ -1,22 +1,16 @@
 import { assertEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
-import { arrayToListNode, ListNode, listNodeToArray } from "./ListNode.ts";
+import { arrayToListNode, ListNode } from "./ListNode.ts";
 
 Deno.test("array should be able to be converted to list node", () => {
   const array = [1, 2, 3];
-  const listNode: ListNode = {
-    val: 1,
-    next: { val: 2, next: { val: 3, next: null } },
-  };
+  const listNode = new ListNode(1, new ListNode(2, new ListNode(3)));
 
-  assertEquals(arrayToListNode(array), listNode);
+  assertEquals<ListNode>(arrayToListNode(array), listNode);
 });
 
 Deno.test("list node should be able to be converted to array", () => {
-  const listNode: ListNode = {
-    val: 1,
-    next: { val: 2, next: { val: 3, next: null } },
-  };
+  const listNode = new ListNode(1, new ListNode(2, new ListNode(3)));
   const array = [1, 2, 3];
 
-  assertEquals(listNodeToArray(listNode), array);
+  assertEquals<number[]>(listNode.toArray(), array);
 });
