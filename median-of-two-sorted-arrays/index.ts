@@ -8,20 +8,27 @@ export function findMedianSortedArrays(
   const nums2Length = nums2.length;
 
   let leftEdge = 0;
-  let rightEdge = nums1Length - 1;
+  let rightEdge = nums1Length;
 
-  while (leftEdge >= rightEdge) {
+  while (leftEdge <= rightEdge) {
     const i = toInt((rightEdge - leftEdge) / 2);
     const j = toInt((nums1Length + nums2Length) / 2) - i;
 
-    const leftSideLargest = Math.max(nums1[i], nums2[j]);
-    const rightSideSmallest = Math.min(nums1[i + 1], nums2[j + 1]);
+    const left1 = nums1[i];
+    const left2 = nums2[j];
+    const right1 = nums1[i + 1];
+    const right2 = nums2[j + 1];
 
-    if (leftSideLargest > rightSideSmallest) {
+    if (left1 <= right2) {
+      leftEdge = i + 1;
+    } else {
+      rightEdge = i - 1;
     }
-
-    rightEdge = -1;
   }
 
-  return 2;
+  return leftEdge;
 }
+
+const nums1 = [1, 2, 3, 4, 5, 6, 7, 18, 20, 23, 24];
+const nums2 = [4, 5, 6, 7, 13, 14, 15, 20, 28, 30];
+findMedianSortedArrays(nums1, nums2);
