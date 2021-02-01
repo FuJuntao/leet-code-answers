@@ -1,4 +1,4 @@
 {
-  "debug.javascript.usePreview": false,
-  "deno.enable": true
+  "deno.enable": true,
+  "deno.lint": true
 }
