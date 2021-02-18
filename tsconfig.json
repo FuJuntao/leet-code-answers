@@ -6,5 +6,6 @@
     "noUnusedParameters": true,
     "strict": true,
     "target": "esnext"
-  }
+  },
+  "exclude": [".history"]
 }
