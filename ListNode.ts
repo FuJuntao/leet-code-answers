@@ -8,13 +8,16 @@ export class ListNode {
   }
 
   toArray() {
-    let array = [];
-    let currentListNode: ListNode | null = this;
-    do {
-      if (!currentListNode) break;
-      array.push(currentListNode.val);
-      currentListNode = currentListNode.next;
-    } while (this.next !== null);
+    const array: number[] = [];
+    const pushValueToArray = (node: ListNode, array: number[]) => {
+      if (node.val !== null) {
+        array.push(node.val);
+      }
+      if (node.next !== null) {
+        pushValueToArray(node.next, array);
+      }
+    };
+    pushValueToArray(this, array);
     return array;
   }
 }
