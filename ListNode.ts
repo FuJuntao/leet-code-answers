@@ -23,6 +23,10 @@ export class ListNode {
 }
 
 export function arrayToListNode(array: number[]) {
+  if (array.length === 0) {
+    throw new Error("Can not convert empty array");
+  }
+
   const firstNode = new ListNode(array[0]);
 
   array.reduce((prev, curr, index) => {

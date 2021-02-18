@@ -1,4 +1,7 @@
-import { assertEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import {
+  assertEquals,
+  assertThrows,
+} from "https://deno.land/std@0.60.0/testing/asserts.ts";
 import { arrayToListNode, ListNode } from "./ListNode.ts";
 
 Deno.test("array should be able to be converted to list node", () => {
@@ -6,6 +9,12 @@ Deno.test("array should be able to be converted to list node", () => {
   const listNode = new ListNode(1, new ListNode(2, new ListNode(3)));
 
   assertEquals<ListNode>(arrayToListNode(array), listNode);
+});
+
+Deno.test("empty array should throw an error", () => {
+  assertThrows(() => {
+    arrayToListNode([]);
+  });
 });
 
 Deno.test("list node should be able to be converted to array", () => {
