@@ -22,7 +22,7 @@ export class ListNode {
   }
 }
 
-export function arrayToListNode(array: number[]) {
+export function toListNode(array: number[]) {
   if (array.length === 0) {
     throw new Error("Can not convert empty array");
   }
