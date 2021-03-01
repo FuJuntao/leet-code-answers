@@ -1,7 +1,7 @@
 import {
   assertEquals,
   assertStrictEquals,
-} from "https://deno.land/std@0.60.0/testing/asserts.ts";
+} from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { removeDuplicates } from "./index.ts";
 
 Deno.test("Should remove duplicated item from array", () => {

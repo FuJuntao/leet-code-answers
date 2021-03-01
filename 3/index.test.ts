@@ -1,4 +1,4 @@
-import { assertStrictEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import { assertStrictEquals } from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { lengthOfLongestSubstring } from "./index.ts";
 
 Deno.test(

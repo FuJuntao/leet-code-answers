@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { toListNode } from "../ListNode.ts";
 import { addTwoNumbers } from "./index.ts";
 

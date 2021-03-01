@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { ListNode } from "../ListNode.ts";
 import { reverseList, reverseListByIterating } from "./index.ts";
 

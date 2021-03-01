@@ -1,4 +1,4 @@
-import { assertStrictEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import { assertStrictEquals } from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { hammingDistance } from "./index.ts";
 
 Deno.test("the hamming distance between 1 and 4 is 2", () => {

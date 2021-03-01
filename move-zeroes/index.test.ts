@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { moveZeroes } from "./index.ts";
 
 Deno.test("Should move zeros to the end of the array", () => {

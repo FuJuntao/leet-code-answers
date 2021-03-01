@@ -1,7 +1,7 @@
 import {
   assertEquals,
   assertThrows,
-} from "https://deno.land/std@0.60.0/testing/asserts.ts";
+} from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { toListNode, ListNode } from "./ListNode.ts";
 
 Deno.test("array should be able to be converted to list node", () => {

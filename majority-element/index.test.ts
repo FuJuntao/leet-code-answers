@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { majorityElement } from "./index.ts";
 
 [3, 2, 3, 1, 2, 3, 3, 3, 4, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6];

@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.60.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.88.0/testing/asserts.ts";
 import { TreeNode } from "../TreeNode.ts";
 import { mergeTrees } from "./index.ts";
 
