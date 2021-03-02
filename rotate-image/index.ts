@@ -2,15 +2,17 @@
  Do not return anything, modify matrix in-place instead.
  */
 function rotate(matrix: number[][]): void {
-  const width = matrix.length - 1;
+  const n = matrix.length;
 
-  for (let i = 0; i < Math.floor(matrix.length / 2); i++) {
-    for (let j = 0; j < Math.floor((matrix.length + 1) / 2); j++) {
+  // 当 n 为偶数时，需要枚举 n^2 / 4 个位置
+  // 当 n 为奇数时，需要枚举 (n^2-1) / 4 个位置
+  for (let i = 0; i < Math.floor(n / 2); i++) {
+    for (let j = 0; j < Math.floor((n + 1) / 2); j++) {
       const temp = matrix[i][j];
-      matrix[i][j] = matrix[width - j][i];
-      matrix[width - j][i] = matrix[width - i][width - j];
-      matrix[width - i][width - j] = matrix[j][width - i];
-      matrix[j][width - i] = temp;
+      matrix[i][j] = matrix[n - j - 1][i];
+      matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];
+      matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];
+      matrix[j][n - i - 1] = temp;
     }
   }
 }
